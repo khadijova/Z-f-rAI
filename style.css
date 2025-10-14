@@ -1,5 +1,12 @@
+/*========================================
+   ZəfərAI: Yekun ChatGPT Stilli Dizayn 
+   Daxil Edilib: Tünd Fon, Mərkəzləşdirmə,
+                Yeni Loqoya Uyğun Rənglər, 
+                Məcburi Kiçik Loqo Ölçüsü
+==========================================*/
+
 :root {
-    /* Əsas Rənglər (Yeni Loqo: Qızılı + Qara) */
+    /* Əsas Rənglər (Yeni Loqo: Qızılı + Qara/Tünd) */
     --bg-dark: #202123;         /* Əsas Fon */
     --bg-medium: #343541;       /* Arayüz Fonu (Sual qutusu fonu) */
     --accent-gold: #FFC300;     /* Qızılı (Vurğu rəngi) */
@@ -38,19 +45,21 @@ header {
     z-index: 1000;
 }
 
+/* LOQO KİÇİLTMƏ (Məcburi) */
 .logo {
     display: flex;
     align-items: center;
-    font-size: 18px; /* Kiçik loqo mətni */
+    font-size: 18px !important; /* Məcburi kiçik mətn ölçüsü */
     font-weight: 900;
+    text-decoration: none; /* Əgər a tag-i kimi istifadə olunarsa */
 }
 
 .logo-img {
-    width: 24px; /* Kiçik loqo şəkli */
-    height: auto;
+    width: 24px !important;  /* Məcburi kiçik şəkil ölçüsü */
+    height: auto !important; 
     margin-right: 8px;
 }
-/* Loqo mətninin rəngləri */
+
 .logo span:nth-child(2) { color: var(--text-light); }
 .logo span:first-child { color: var(--accent-gold); }
 
