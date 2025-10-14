@@ -1,13 +1,24 @@
-/* Əsas Rənglər (Azərbaycan Bayrağından) */
+/* Əsas Rənglər və Fontlar */
 :root {
-    --blue: #0099D6;     /* Mavi (Türkçülük) */
-    --red: #E00034;      /* Qırmızı (Müasirlik) */
-    --green: #4D9A19;    /* Yaşıl (İslam) */
-    --primary-text: #2c3e50; /* Tünd Boz (Meydan Mətni üçün) */
-    --secondary-text: #7f8c8d; /* Açıq Boz (Kiçik mətnlər üçün) */
-    --background: #f4f7f6; /* Açıq Fon */
-    --white: #ffffff;
+    /* Tünd fon - Professionalizm, Dərinlik */
+    --primary-bg: #1e272e; 
+    /* Açıq elementlər və mətn */
+    --secondary-bg: #2c3e50; 
+    /* Azərbaycan Bayrağı Rəngləri */
+    --blue: #0099D6;     
+    --red: #E00034;      
+    --green: #4D9A19;    
+    /* Vurğu rəngi - Zəfər, Qiymət */
+    --accent: #FFD700;   /* Qızılı (Gold) */
+    --text-light: #ecf0f1;
+    --text-dark: #34495e;
+    
+    /* Font (Daha müasir) */
+    --font-family: 'Montserrat', sans-serif;
 }
+
+/* Google Font-u əlavə etmək üçün index.html-ə bu xətti əlavə edin: */
+/* <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> */
 
 
 /* Ümumi tənzimləmələr (Reset) */
@@ -15,24 +26,30 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif; /* Sadə bir font seçimi */
+    font-family: var(--font-family);
 }
 
 body {
-    background-color: var(--background);
-    color: var(--primary-text);
+    background-color: var(--primary-bg);
+    color: var(--text-light);
     line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
-/* Naviqasiya (Başlıq - Header) */
+h1, h2, h3 {
+    color: var(--text-light);
+    margin-bottom: 0.5em;
+    font-weight: 700;
+}
+
+/* NAVİQASİYA (HEADER) */
 header {
-    background-color: var(--blue); /* Mavi zolaq */
-    color: var(--white);
+    background-color: var(--secondary-bg);
     padding: 15px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -40,8 +57,9 @@ header {
 
 .logo {
     font-size: 28px;
-    font-weight: bold;
-    color: var(--white);
+    font-weight: 700;
+    color: var(--blue); /* Mavi loqo */
+    letter-spacing: 1px;
 }
 
 nav ul {
@@ -50,159 +68,179 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 25px;
+    margin-left: 30px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: var(--white);
-    font-weight: 500;
-    transition: color 0.3s;
+    color: var(--text-light);
+    font-weight: 400;
+    transition: color 0.3s, border-bottom 0.3s;
+    padding-bottom: 5px;
 }
 
 nav ul li a:hover {
-    color: var(--red); /* Hover effekti üçün Qırmızı */
+    color: var(--accent); /* Hover effekti Qızılı */
+    border-bottom: 2px solid var(--red); /* Qırmızı xətt vurğusu */
 }
 
-/* Əsas Giriş (Hero) Bölməsi */
+/* ƏSAS GİRİŞ (HERO) BÖLMƏSİ */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-bg.jpg'); /* Fon şəkli üçün yer */
-    background-size: cover;
-    background-position: center;
-    color: var(--white);
+    /* Tünd fon üzərində yüngül gradient */
+    background: linear-gradient(135deg, rgba(23, 32, 42, 0.9), rgba(44, 62, 80, 0.9));
+    color: var(--text-light);
     text-align: center;
-    padding: 100px 20px;
+    padding: 150px 20px;
+    border-bottom: 5px solid var(--green); /* Yaşıl ayırıcı xətt */
 }
 
 .hero h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
-    color: var(--white);
+    font-size: 56px;
+    margin-bottom: 15px;
+    /* Qızılı rənglə Sİ adını vurğulamaq üçün: Span əlavə etmək lazımdır */
 }
 
 .hero p {
-    font-size: 20px;
-    margin-bottom: 30px;
+    font-size: 22px;
+    margin-bottom: 40px;
+    color: #bdc3c7;
 }
 
-/* Hərəkətə Çağırış Düyməsi (Call-to-Action) */
 .cta-button {
     display: inline-block;
-    background-color: var(--red); /* Əsas hərəkət üçün Qırmızı */
+    background-color: var(--red); /* Əsas düymə üçün Qırmızı */
     color: var(--white);
     text-decoration: none;
-    padding: 12px 30px;
-    border-radius: 5px;
+    padding: 15px 40px;
+    border-radius: 50px; /* Yumru düymə */
     font-size: 18px;
-    font-weight: bold;
-    transition: background-color 0.3s;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
 }
 
 .cta-button:hover {
-    background-color: #a30022; /* Qırmızı rəngin tündləşmiş variantı */
+    background-color: #c0392b;
+    transform: translateY(-3px); /* Yuxarı hərəkət effekti */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Ümumi Bölmə (Section) Stili */
+/* ÜMUMİ BÖLMƏ (SECTION) STİLİ */
 section {
-    padding: 60px 5%;
+    padding: 80px 5%;
     text-align: center;
+    background-color: var(--primary-bg);
+}
+
+section:nth-child(even) { /* Cüt saylı bölmələrə fərqli fon */
+    background-color: var(--secondary-bg);
 }
 
 section h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: var(--blue); /* Bölmə başlıqları üçün Mavi */
+    font-size: 42px;
+    margin-bottom: 30px;
+    color: var(--blue);
+    position: relative;
+    padding-bottom: 10px;
 }
 
-/* Demo/Interaktiv Bölmənin Stili */
-.demo-section {
-    background-color: var(--white);
-    border-top: 5px solid var(--green); /* Yaşıl xətt vurğu üçün */
+section h2::after { /* Başlıq altından xətt */
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent);
+    margin: 10px auto 0;
 }
 
+
+/* DEMO/İNTERAKTİV BÖLMƏNİN STİLİ */
 .ai-interface {
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 30px;
-    background-color: var(--background);
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 40px;
+    background-color: var(--secondary-bg);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #user-input {
-    width: 75%;
-    padding: 12px;
-    border: 2px solid #ccc;
-    border-radius: 5px 0 0 5px;
+    width: 78%;
+    padding: 15px 20px;
+    border: 2px solid var(--blue);
+    border-radius: 8px 0 0 8px;
     font-size: 16px;
+    background-color: var(--primary-bg);
+    color: var(--text-light);
     outline: none;
-    transition: border-color 0.3s;
 }
 
 #user-input:focus {
-    border-color: var(--red); /* Fokus zamanı Qırmızı */
+    border-color: var(--red); 
 }
 
 #submit-btn {
-    width: 25%;
-    padding: 12px;
+    width: 22%;
+    padding: 15px;
     border: none;
     background-color: var(--red);
     color: var(--white);
     cursor: pointer;
     font-size: 16px;
-    font-weight: bold;
-    border-radius: 0 5px 5px 0;
+    font-weight: 700;
+    border-radius: 0 8px 8px 0;
     transition: background-color 0.3s;
 }
 
 #submit-btn:hover {
-    background-color: #a30022;
+    background-color: #c0392b;
 }
 
 #ai-response {
-    margin-top: 20px;
+    margin-top: 30px;
     text-align: left;
-    min-height: 50px;
-    padding: 15px;
-    background-color: var(--white);
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    color: var(--primary-text);
+    min-height: 80px;
+    padding: 20px;
+    background-color: var(--primary-bg);
+    border: 1px solid var(--blue);
+    border-radius: 8px;
+    color: var(--text-light);
 }
 
-/* Alt Hissə (Footer) */
+/* ALT HİSSƏ (FOOTER) */
 footer {
-    background-color: var(--primary-text); /* Tünd fon */
-    color: var(--white);
-    padding: 20px 5%;
+    background-color: #131a20; /* Daha tünd fon */
+    color: #7f8c8d;
+    padding: 30px 5%;
     font-size: 14px;
     text-align: center;
 }
 
-/* Kiçik Ekranlar üçün Adaptivlik (Responsive Design) */
+/* Adaptivlik (Responsive Design) */
 @media (max-width: 768px) {
+    .hero h1 {
+        font-size: 40px;
+    }
+    
     header {
         flex-direction: column;
     }
 
     nav ul {
-        margin-top: 10px;
-        flex-direction: column;
-        align-items: center;
+        margin-top: 15px;
+        justify-content: center;
     }
 
     nav ul li {
-        margin: 5px 0;
+        margin: 0 10px;
     }
-
-    .hero h1 {
-        font-size: 36px;
-    }
-
+    
     #user-input, #submit-btn {
         width: 100%;
-        border-radius: 5px;
+        border-radius: 8px;
         margin-bottom: 10px;
+        padding: 12px;
     }
 }
