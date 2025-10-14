@@ -1,27 +1,17 @@
-/* Əsas Rənglər və Fontlar */
+/* Rənglər: Loqonuza tam uyğun */
 :root {
-    /* Tünd fon - Professionalizm, Dərinlik */
-    --primary-bg: #1e272e; 
-    /* Açıq elementlər və mətn */
-    --secondary-bg: #2c3e50; 
-    /* Azərbaycan Bayrağı Rəngləri */
-    --blue: #0099D6;     
-    --red: #E00034;      
-    --green: #4D9A19;    
-    /* Vurğu rəngi - Zəfər, Qiymət */
-    --accent: #FFD700;   /* Qızılı (Gold) */
-    --text-light: #ecf0f1;
-    --text-dark: #34495e;
+    --primary-bg: #f4f4f4;      /* Təmiz Ağ-Boz Fon */
+    --secondary-bg: #ffffff;    /* Açıq Arayüz Fonu */
+    --main-dark: #1f3964;       /* Tünd Mavi (Logonun Mətn Rəngi) */
+    --accent-gold: #FFC300;     /* Qızılı (Logonun Ayparası) */
+    --az-red: #E00034;          /* Azərbaycan Qırmızısı (Vurğu Düymə) */
+    --text-dark: #333333;
+    --text-light: #666666;
     
-    /* Font (Daha müasir) */
     --font-family: 'Montserrat', sans-serif;
 }
 
-/* Google Font-u əlavə etmək üçün index.html-ə bu xətti əlavə edin: */
-/* <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> */
-
-
-/* Ümumi tənzimləmələr (Reset) */
+/* Ümumi tənzimləmələr */
 * {
     margin: 0;
     padding: 0;
@@ -31,35 +21,36 @@
 
 body {
     background-color: var(--primary-bg);
-    color: var(--text-light);
+    color: var(--text-dark);
     line-height: 1.6;
-    scroll-behavior: smooth;
-}
-
-h1, h2, h3 {
-    color: var(--text-light);
-    margin-bottom: 0.5em;
-    font-weight: 700;
+    min-height: 100vh; /* Tam ekran boyu hündürlük */
+    display: flex; /* Kontenti yerləşdirmək üçün */
+    flex-direction: column;
 }
 
 /* NAVİQASİYA (HEADER) */
 header {
     background-color: var(--secondary-bg);
+    border-bottom: 3px solid var(--accent-gold); /* Qızılı xətt */
     padding: 15px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
+    display: flex;
+    align-items: center;
     font-size: 28px;
-    font-weight: 700;
-    color: var(--blue); /* Mavi loqo */
-    letter-spacing: 1px;
+    font-weight: 900; /* Daha qalın font */
+    color: var(--main-dark);
+}
+
+.logo-img {
+    width: 40px; /* Loqonun ölçüsü */
+    height: auto;
+    margin-right: 10px;
 }
 
 nav ul {
@@ -67,131 +58,98 @@ nav ul {
     display: flex;
 }
 
-nav ul li {
-    margin-left: 30px;
-}
-
 nav ul li a {
     text-decoration: none;
     color: var(--text-light);
-    font-weight: 400;
-    transition: color 0.3s, border-bottom 0.3s;
-    padding-bottom: 5px;
+    font-weight: 700;
+    margin-left: 25px;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: var(--accent); /* Hover effekti Qızılı */
-    border-bottom: 2px solid var(--red); /* Qırmızı xətt vurğusu */
+    color: var(--az-red);
 }
 
-/* ƏSAS GİRİŞ (HERO) BÖLMƏSİ */
-.hero {
-    /* Tünd fon üzərində yüngül gradient */
-    background: linear-gradient(135deg, rgba(23, 32, 42, 0.9), rgba(44, 62, 80, 0.9));
-    color: var(--text-light);
-    text-align: center;
-    padding: 150px 20px;
-    border-bottom: 5px solid var(--green); /* Yaşıl ayırıcı xətt */
+/* ƏSAS İNTERFEYS BÖLMƏSİ (FULL SCREEN) */
+.full-screen-center {
+    flex-grow: 1; /* Orta hissənin qalan yeri tutmasını təmin edir */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Kontenti mərkəzə yığır */
+    align-items: center;
+    padding: 20px 5%;
 }
 
-.hero h1 {
-    font-size: 56px;
-    margin-bottom: 15px;
-    /* Qızılı rənglə Sİ adını vurğulamaq üçün: Span əlavə etmək lazımdır */
-}
-
-.hero p {
-    font-size: 22px;
-    margin-bottom: 40px;
-    color: #bdc3c7;
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: var(--red); /* Əsas düymə üçün Qırmızı */
-    color: var(--white);
-    text-decoration: none;
-    padding: 15px 40px;
-    border-radius: 50px; /* Yumru düymə */
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: none;
-}
-
-.cta-button:hover {
-    background-color: #c0392b;
-    transform: translateY(-3px); /* Yuxarı hərəkət effekti */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* ÜMUMİ BÖLMƏ (SECTION) STİLİ */
-section {
-    padding: 80px 5%;
-    text-align: center;
-    background-color: var(--primary-bg);
-}
-
-section:nth-child(even) { /* Cüt saylı bölmələrə fərqli fon */
-    background-color: var(--secondary-bg);
-}
-
-section h2 {
-    font-size: 42px;
+/* ZəfərAI Haqqında Qısa Məlumat */
+.short-info {
+    max-width: 700px;
     margin-bottom: 30px;
-    color: var(--blue);
-    position: relative;
-    padding-bottom: 10px;
+    text-align: center;
 }
 
-section h2::after { /* Başlıq altından xətt */
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: var(--accent);
-    margin: 10px auto 0;
+.short-info h2 {
+    font-size: 32px;
+    color: var(--main-dark);
+    margin-bottom: 10px;
+}
+
+.accent-color {
+    color: var(--accent-gold);
+}
+
+.short-info p {
+    font-size: 18px;
+    color: var(--text-light);
 }
 
 
-/* DEMO/İNTERAKTİV BÖLMƏNİN STİLİ */
+/* DEMO/İNTERAKTİV BÖLMƏ */
 .ai-interface {
     max-width: 800px;
-    margin: 0 auto;
+    width: 100%;
     padding: 40px;
     background-color: var(--secondary-bg);
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid var(--az-red); /* Vurğu xətti */
+}
+
+.ai-interface h3 {
+    font-size: 24px;
+    color: var(--main-dark);
+    margin-bottom: 20px;
+}
+
+.input-area {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 #user-input {
-    width: 78%;
-    padding: 15px 20px;
-    border: 2px solid var(--blue);
+    flex-grow: 1;
+    padding: 15px;
+    border: 2px solid #ddd;
     border-radius: 8px 0 0 8px;
     font-size: 16px;
-    background-color: var(--primary-bg);
-    color: var(--text-light);
     outline: none;
+    transition: border-color 0.3s;
 }
 
 #user-input:focus {
-    border-color: var(--red); 
+    border-color: var(--az-red); 
 }
 
 #submit-btn {
-    width: 22%;
-    padding: 15px;
+    padding: 15px 25px;
     border: none;
-    background-color: var(--red);
-    color: var(--white);
+    background-color: var(--az-red);
+    color: var(--secondary-bg);
     cursor: pointer;
     font-size: 16px;
     font-weight: 700;
     border-radius: 0 8px 8px 0;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.1s;
 }
 
 #submit-btn:hover {
@@ -199,48 +157,43 @@ section h2::after { /* Başlıq altından xətt */
 }
 
 #ai-response {
-    margin-top: 30px;
     text-align: left;
     min-height: 80px;
     padding: 20px;
     background-color: var(--primary-bg);
-    border: 1px solid var(--blue);
+    border: 1px solid #ddd;
     border-radius: 8px;
-    color: var(--text-light);
+    color: var(--text-dark);
+    font-style: italic;
 }
 
 /* ALT HİSSƏ (FOOTER) */
 footer {
-    background-color: #131a20; /* Daha tünd fon */
-    color: #7f8c8d;
-    padding: 30px 5%;
-    font-size: 14px;
+    background-color: #e0e0e0;
+    color: var(--text-light);
+    padding: 15px 5%;
+    font-size: 12px;
     text-align: center;
+    margin-top: auto; /* Footer-i ən dibə yapışdırır */
 }
 
-/* Adaptivlik (Responsive Design) */
+/* Adaptivlik */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 40px;
-    }
-    
     header {
         flex-direction: column;
     }
-
     nav ul {
-        margin-top: 15px;
-        justify-content: center;
+        margin-top: 10px;
     }
-
-    nav ul li {
-        margin: 0 10px;
+    .input-area {
+        flex-direction: column;
     }
-    
     #user-input, #submit-btn {
         width: 100%;
         border-radius: 8px;
         margin-bottom: 10px;
-        padding: 12px;
+    }
+    #submit-btn {
+        border-radius: 8px;
     }
 }
