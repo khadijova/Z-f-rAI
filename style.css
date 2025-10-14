@@ -1,0 +1,207 @@
+/* Əsas Rənglər (Azərbaycan Bayrağından) */
+:root {
+    --blue: #0099D6;     /* Mavi (Türkçülük) */
+    --red: #E00034;      /* Qırmızı (Müasirlik) */
+    --green: #4D9A19;    /* Yaşıl (İslam) */
+    --primary-text: #2c3e50; /* Tünd Boz (Meydan Mətni üçün) */
+    --secondary-text: #7f8c8d; /* Açıq Boz (Kiçik mətnlər üçün) */
+    --background: #f4f7f6; /* Açıq Fon */
+    --white: #ffffff;
+}
+
+/* Ümumi tənzimləmələr (Reset) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* Sadə bir font seçimi */
+}
+
+body {
+    background-color: var(--background);
+    color: var(--primary-text);
+    line-height: 1.6;
+}
+
+/* Naviqasiya (Başlıq - Header) */
+header {
+    background-color: var(--blue); /* Mavi zolaq */
+    color: var(--white);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--white);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--red); /* Hover effekti üçün Qırmızı */
+}
+
+/* Əsas Giriş (Hero) Bölməsi */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-bg.jpg'); /* Fon şəkli üçün yer */
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* Hərəkətə Çağırış Düyməsi (Call-to-Action) */
+.cta-button {
+    display: inline-block;
+    background-color: var(--red); /* Əsas hərəkət üçün Qırmızı */
+    color: var(--white);
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #a30022; /* Qırmızı rəngin tündləşmiş variantı */
+}
+
+/* Ümumi Bölmə (Section) Stili */
+section {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: var(--blue); /* Bölmə başlıqları üçün Mavi */
+}
+
+/* Demo/Interaktiv Bölmənin Stili */
+.demo-section {
+    background-color: var(--white);
+    border-top: 5px solid var(--green); /* Yaşıl xətt vurğu üçün */
+}
+
+.ai-interface {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: var(--background);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+#user-input {
+    width: 75%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#user-input:focus {
+    border-color: var(--red); /* Fokus zamanı Qırmızı */
+}
+
+#submit-btn {
+    width: 25%;
+    padding: 12px;
+    border: none;
+    background-color: var(--red);
+    color: var(--white);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 0 5px 5px 0;
+    transition: background-color 0.3s;
+}
+
+#submit-btn:hover {
+    background-color: #a30022;
+}
+
+#ai-response {
+    margin-top: 20px;
+    text-align: left;
+    min-height: 50px;
+    padding: 15px;
+    background-color: var(--white);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: var(--primary-text);
+}
+
+/* Alt Hissə (Footer) */
+footer {
+    background-color: var(--primary-text); /* Tünd fon */
+    color: var(--white);
+    padding: 20px 5%;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Kiçik Ekranlar üçün Adaptivlik (Responsive Design) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    #user-input, #submit-btn {
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+}
