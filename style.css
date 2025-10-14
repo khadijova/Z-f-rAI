@@ -1,17 +1,17 @@
-/* Rənglər: Loqonuza tam uyğun */
+/* Rənglər: Loqonuza uyğun Tünd Rejim */
 :root {
-    --primary-bg: #f4f4f4;      /* Təmiz Ağ-Boz Fon */
-    --secondary-bg: #ffffff;    /* Açıq Arayüz Fonu */
-    --main-dark: #1f3964;       /* Tünd Mavi (Logonun Mətn Rəngi) */
-    --accent-gold: #FFC300;     /* Qızılı (Logonun Ayparası) */
-    --az-red: #E00034;          /* Azərbaycan Qırmızısı (Vurğu Düymə) */
-    --text-dark: #333333;
-    --text-light: #666666;
+    --bg-dark: #202123;         /* Əsas Fon (ChatGPT-dən tündə yaxın) */
+    --bg-medium: #343541;       /* Arayüz Fonu (Açıq-tünd) */
+    --main-dark: #1f3964;       /* Tünd Mavi (Logonun Mətni - Azərbaycandan ilhamlanma) */
+    --accent-gold: #FFC300;     /* Qızılı (Aypara - Vurğu rəngi) */
+    --az-red: #E00034;          /* Azərbaycan Qırmızısı (Düymə) */
+    --text-light: #f5f5f5;      /* Açıq Mətn */
+    --text-muted: #aaaaaa;      /* Solğun Mətn */
     
     --font-family: 'Montserrat', sans-serif;
 }
 
-/* Ümumi tənzimləmələr */
+/* Ümumi və Təmizləmə */
 * {
     margin: 0;
     padding: 0;
@@ -20,180 +20,154 @@
 }
 
 body {
-    background-color: var(--primary-bg);
-    color: var(--text-dark);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
     line-height: 1.6;
-    min-height: 100vh; /* Tam ekran boyu hündürlük */
-    display: flex; /* Kontenti yerləşdirmək üçün */
+    min-height: 100vh;
+    display: flex;
     flex-direction: column;
 }
 
-/* NAVİQASİYA (HEADER) */
+/* NAVİQASİYA (Yığcam və minimal) */
 header {
-    background-color: var(--secondary-bg);
-    border-bottom: 3px solid var(--accent-gold); /* Qızılı xətt */
+    background-color: var(--bg-dark);
     padding: 15px 5%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start; /* Loqonu sola yığırıq */
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: none; /* Kölgəyə ehtiyac yoxdur */
+    position: relative;
+    z-index: 1000;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    font-size: 28px;
-    font-weight: 900; /* Daha qalın font */
-    color: var(--main-dark);
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--accent-gold); /* Loqo mətnini Qızılı edək */
 }
 
 .logo-img {
-    width: 40px; /* Loqonun ölçüsü */
+    width: 30px;
     height: auto;
-    margin-right: 10px;
+    margin-right: 8px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-}
+/* Menü/Naviqasiyanı bu dizaynda çıxarırıq və ya sadə saxlayırıq */
+nav { display: none; } 
 
-nav ul li a {
-    text-decoration: none;
-    color: var(--text-light);
-    font-weight: 700;
-    margin-left: 25px;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: var(--az-red);
-}
-
-/* ƏSAS İNTERFEYS BÖLMƏSİ (FULL SCREEN) */
+/* TAM EKRAN MƏRKƏZ BÖLMƏSİ */
 .full-screen-center {
-    flex-grow: 1; /* Orta hissənin qalan yeri tutmasını təmin edir */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center; /* Kontenti mərkəzə yığır */
     align-items: center;
     padding: 20px 5%;
-}
-
-/* ZəfərAI Haqqında Qısa Məlumat */
-.short-info {
-    max-width: 700px;
-    margin-bottom: 30px;
     text-align: center;
 }
 
+/* ZəfərAI Haqqında Qısa Məlumat (ChatGPT-də "Where should we begin?" kimi) */
+.short-info {
+    max-width: 700px;
+    margin-bottom: 50px; /* Sual hissəsindən uzaqlaşdırırıq */
+}
+
 .short-info h2 {
-    font-size: 32px;
-    color: var(--main-dark);
-    margin-bottom: 10px;
+    font-size: 40px;
+    color: var(--text-light);
+    font-weight: 700;
+    margin-bottom: 5px;
 }
 
 .accent-color {
-    color: var(--accent-gold);
+    color: var(--accent-gold); /* Vurğu rəngini Qızılı edirik */
 }
 
 .short-info p {
     font-size: 18px;
-    color: var(--text-light);
+    color: var(--text-muted);
 }
 
 
-/* DEMO/İNTERAKTİV BÖLMƏ */
+/* DEMO/İNTERAKTİV BÖLMƏ (Əsas Diqqət Mərkəzi) */
 .ai-interface {
-    max-width: 800px;
+    max-width: 760px; /* ChatGPT-dəki kimi daha geniş */
     width: 100%;
-    padding: 40px;
-    background-color: var(--secondary-bg);
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border-top: 5px solid var(--az-red); /* Vurğu xətti */
+    padding: 15px 25px; /* Padding-i dəyişdiririk */
+    background-color: var(--bg-medium);
+    border-radius: 20px; /* Daha çox yumru kənarlar */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); /* Tünd fon üçün daha güclü kölgə */
+    transition: box-shadow 0.3s;
 }
 
-.ai-interface h3 {
-    font-size: 24px;
-    color: var(--main-dark);
-    margin-bottom: 20px;
-}
-
+/* Sual Axtarış Çubuğunun Dizaynı */
 .input-area {
     display: flex;
+    align-items: center;
     width: 100%;
-    margin-bottom: 20px;
 }
 
 #user-input {
     flex-grow: 1;
-    padding: 15px;
-    border: 2px solid #ddd;
-    border-radius: 8px 0 0 8px;
-    font-size: 16px;
+    padding: 15px 15px;
+    border: none; /* Sərhədləri yığışdırırıq */
+    background-color: var(--bg-medium);
+    color: var(--text-light);
+    font-size: 17px;
     outline: none;
-    transition: border-color 0.3s;
 }
 
-#user-input:focus {
-    border-color: var(--az-red); 
+#user-input::placeholder {
+    color: var(--text-muted);
 }
 
 #submit-btn {
-    padding: 15px 25px;
+    /* Düyməni səs ikonu və ya sadə bir ox ikonu kimi gizlədə bilərik */
+    /* Hələ ki, cavab almaq funksiyasını saxlayırıq */
+    padding: 12px 18px;
     border: none;
-    background-color: var(--az-red);
-    color: var(--secondary-bg);
+    background-color: transparent; /* Fon yoxdur */
+    color: var(--az-red); 
     cursor: pointer;
     font-size: 16px;
     font-weight: 700;
-    border-radius: 0 8px 8px 0;
-    transition: background-color 0.3s, transform 0.1s;
+    border-radius: 10px;
+    transition: color 0.3s;
 }
 
 #submit-btn:hover {
-    background-color: #c0392b;
+    color: var(--accent-gold); /* Hover-də Qızılı */
 }
 
+/* AI Cavab Qutusu */
 #ai-response {
     text-align: left;
-    min-height: 80px;
-    padding: 20px;
-    background-color: var(--primary-bg);
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    color: var(--text-dark);
-    font-style: italic;
+    min-height: 50px;
+    padding: 10px 0; /* Cavabı inputdan aşağıda minimalist saxlayırıq */
+    color: var(--text-light);
+    background-color: var(--bg-medium); /* Fonu input fonu ilə eyni edirik */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Separator xətti */
+    margin-top: 15px;
+    font-size: 15px;
+    font-style: normal; /* Normal font */
 }
 
-/* ALT HİSSƏ (FOOTER) */
+
+/* FOOTER (Minimum görünüş) */
 footer {
-    background-color: #e0e0e0;
-    color: var(--text-light);
-    padding: 15px 5%;
+    background-color: var(--bg-dark);
+    color: var(--text-muted);
+    padding: 10px 5%;
     font-size: 12px;
     text-align: center;
-    margin-top: auto; /* Footer-i ən dibə yapışdırır */
+    margin-top: auto;
 }
 
-/* Adaptivlik */
+/* Adaptivlik (Çox az dəyişiklik tələb edir) */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-    }
-    nav ul {
-        margin-top: 10px;
-    }
-    .input-area {
-        flex-direction: column;
-    }
-    #user-input, #submit-btn {
-        width: 100%;
-        border-radius: 8px;
-        margin-bottom: 10px;
-    }
-    #submit-btn {
-        border-radius: 8px;
+    .short-info h2 {
+        font-size: 30px;
     }
 }
