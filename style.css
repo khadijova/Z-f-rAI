@@ -1,23 +1,16 @@
-/*========================================
-   ZəfərAI: Yekun ChatGPT Stilli Dizayn 
-   Rənglər: Yeni Loqoya (Qızılı/Tünd) uyğun
-==========================================*/
-
 :root {
-    /* Əsas Fon və Element Rəngləri */
-    --bg-dark: #202123;         /* Əsas Fon (Tünd, Loqo arxasındakı Qara) */
+    /* Əsas Rənglər (Yeni Loqo: Qızılı + Qara) */
+    --bg-dark: #202123;         /* Əsas Fon */
     --bg-medium: #343541;       /* Arayüz Fonu (Sual qutusu fonu) */
-    
-    /* Vurğu və Mətn Rəngləri (Logodan götürülmüş) */
-    --accent-gold: #FFC300;     /* Qızılı (Loqo Rəngi - Vurğu) */
-    --text-light: #f5f5f5;      /* Açıq Mətn (Loqodakı Ağ) */
-    --text-muted: #aaaaaa;      /* Solğun Mətn (Placeholder və s.) */
+    --accent-gold: #FFC300;     /* Qızılı (Vurğu rəngi) */
+    --text-light: #f5f5f5;      /* Açıq Mətn */
+    --text-muted: #aaaaaa;      /* Solğun Mətn */
     --az-red: #E00034;          /* Azərbaycan Qırmızısı (Kiçik vurğu) */
     
     --font-family: 'Montserrat', sans-serif;
 }
 
-/* Ümumi Sıfırlama və Əsas Bədən Stili */
+/* Ümumi Sıfırlama */
 * {
     margin: 0;
     padding: 0;
@@ -48,26 +41,18 @@ header {
 .logo {
     display: flex;
     align-items: center;
-    font-size: 24px;
+    font-size: 18px; /* Kiçik loqo mətni */
     font-weight: 900;
 }
 
 .logo-img {
-    width: 30px; 
+    width: 24px; /* Kiçik loqo şəkli */
     height: auto;
     margin-right: 8px;
 }
-/* Loqo mətninin rəngləri: Zəfər (Qızılı), AI (Ağ) */
-.logo span:nth-child(2) {
-    color: var(--text-light);
-}
-
-.logo span:first-child {
-    color: var(--accent-gold);
-}
-
-/* Naviqasiyanı ChatGPT stili üçün gizlədirik */
-nav { display: none; } 
+/* Loqo mətninin rəngləri */
+.logo span:nth-child(2) { color: var(--text-light); }
+.logo span:first-child { color: var(--accent-gold); }
 
 
 /* TAM EKRAN MƏRKƏZ BÖLMƏSİ (FULL-SCREEN FOCUS) */
@@ -81,7 +66,7 @@ nav { display: none; }
     text-align: center;
 }
 
-/* Qısa Məlumat Başlığı (ChatGPT-dəki kimi "Where should we begin?") */
+/* Qısa Məlumat Başlığı */
 .short-info {
     max-width: 700px;
     margin-bottom: 50px;
@@ -94,9 +79,7 @@ nav { display: none; }
     margin-bottom: 5px;
 }
 
-.accent-color {
-    color: var(--accent-gold); 
-}
+.accent-color { color: var(--accent-gold); }
 
 .short-info p {
     font-size: 18px;
@@ -112,11 +95,6 @@ nav { display: none; }
     background-color: var(--bg-medium);
     border-radius: 20px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-    transition: box-shadow 0.3s;
-}
-
-.ai-interface h3 {
-    display: none; /* Bu dizaynda başlıq yığışdırılır */
 }
 
 .input-area {
@@ -140,11 +118,10 @@ nav { display: none; }
 }
 
 #submit-btn {
-    /* Düyməni səs ikonu və ya göndərmə ikonu kimi istifadə etmək üçün stili dəyişirik */
     padding: 12px 18px;
     border: none;
     background-color: transparent;
-    color: var(--accent-gold); /* Qızılı rəngdə göndərmə ikonu */
+    color: var(--accent-gold); 
     cursor: pointer;
     font-size: 16px;
     font-weight: 700;
@@ -169,11 +146,7 @@ nav { display: none; }
     font-style: normal;
 }
 
-#ai-response p {
-    margin: 5px 0;
-}
-
-/* FOOTER (Minimum görünüş) */
+/* FOOTER */
 footer {
     background-color: var(--bg-dark);
     color: var(--text-muted);
