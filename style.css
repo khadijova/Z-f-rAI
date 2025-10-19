@@ -1,9 +1,3 @@
-/*========================================
-   ZəfərAI: Yekun ChatGPT Stilli Dizayn 
-   Daxil Edilib: Tünd Fon, Mərkəzləşdirmə,
-                Yeni Loqoya Uyğun Rənglər, 
-                Məcburi Kiçik Loqo Ölçüsü
-==========================================*/
 
 :root {
     /* Əsas Rənglər (Yeni Loqo: Qızılı + Qara/Tünd) */
@@ -29,7 +23,7 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-light);
     line-height: 1.6;
-    min-height: 100vh;
+    min-height: 100vh; /* Scroll-un olmaması üçün tam hündürlük */
     display: flex;
     flex-direction: column;
 }
@@ -37,31 +31,72 @@ body {
 /* NAVİQASİYA (Header) */
 header {
     background-color: var(--bg-dark);
-    padding: 15px 5%;
+    padding: 10px 5%; /* Nazik Header üçün padding azaldıldı */
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between; /* SOL (Loqo) və SAĞ (Naviqasiya) elementləri ayırır */
     align-items: center;
     position: relative;
     z-index: 1000;
+    height: 60px; /* Header-in hündürlüyünü təyin edirik */
 }
 
 /* LOQO KİÇİLTMƏ (Məcburi) */
 .logo {
     display: flex;
     align-items: center;
-    font-size: 18px !important; /* Məcburi kiçik mətn ölçüsü */
+    font-size: 16px !important; /* Məcburi kiçik mətn ölçüsü */
     font-weight: 900;
-    text-decoration: none; /* Əgər a tag-i kimi istifadə olunarsa */
+    text-decoration: none; 
+    color: inherit;
 }
 
 .logo-img {
-    width: 24px !important;  /* Məcburi kiçik şəkil ölçüsü */
+    width: 20px !important;  /* Məcburi kiçik şəkil ölçüsü */
     height: auto !important; 
-    margin-right: 8px;
+    margin-right: 6px;
 }
 
 .logo span:nth-child(2) { color: var(--text-light); }
 .logo span:first-child { color: var(--accent-gold); }
+
+
+/* SAĞ TƏRƏF NAVİQASİYASI (Hesabım + Dil) */
+nav.user-nav ul {
+    list-style: none;
+    display: flex; /* Elementləri yan-yana düzür */
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav.user-nav ul li {
+    margin-left: 15px;
+}
+
+.account-btn {
+    text-decoration: none;
+    color: var(--text-light);
+    background-color: var(--bg-medium); 
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.account-btn:hover {
+    background-color: #4a4b56; 
+}
+
+.language-select {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    border: 1px solid var(--bg-medium);
+    padding: 4px 8px;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+}
 
 
 /* TAM EKRAN MƏRKƏZ BÖLMƏSİ (FULL-SCREEN FOCUS) */
@@ -69,7 +104,7 @@ header {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; /* Mərkəzi fokus */
     align-items: center;
     padding: 20px 5%;
     text-align: center;
