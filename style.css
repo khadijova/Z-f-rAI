@@ -1,7 +1,13 @@
+/*========================================
+   ZəfərAI: YEKUN PROFESSİONAL DİZAYN (Deep Ocean)
+   Palitra: Tünd Mavi/Gümüşü Vurğularla.
+   Header: Minimalist, Kiçik Logo (20px), Sağda Naviqasiya.
+==========================================*/
+
 :root {
     /* Yeni Peşəkar Rəng Palitrası */
     --bg-dark: #0f172a;         /* Əsas Fon (Deep Ocean) */
-    --bg-medium: #1e293b;       /* Arayüz Fonu */
+    --bg-medium: #1e293b;       /* Arayüz Fonu (Giriş qutusu və s.) */
     --accent-primary: #3b82f6;  /* Əsas Vurğu (Peşəkar Mavi) */
     --accent-secondary: #64748b;/* İkincil Vurğu (Gümüşü Mavi) */
     --text-light: #f1f5f9;      /* Açıq Mətn (Ağ-Gümüşü) */
@@ -10,7 +16,7 @@
     --font-family: 'Montserrat', sans-serif;
 }
 
-/* Ümumi və Bədən */
+/* Ümumi Sıfırlama */
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +31,7 @@ body {
     min-height: 100vh; 
     display: flex;
     flex-direction: column;
-    overflow: hidden; 
+    overflow: hidden; /* Scroll-un olmaması üçün */
 }
 
 /* NAVİQASİYA (Header) */
@@ -33,37 +39,37 @@ header {
     background-color: var(--bg-dark);
     padding: 10px 5%; 
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between; /* SOL (Loqo) və SAĞ (Naviqasiya) elementləri ayırır */
     align-items: center;
     position: relative;
     z-index: 1000;
     height: 60px; 
-    border-bottom: 1px solid var(--bg-medium); /* Ayırıcı xətt */
+    border-bottom: 1px solid var(--bg-medium); 
 }
 
-/* LOQO KİÇİLTMƏ */
+/* LOQO KİÇİLTMƏ (Məcburi!) */
 .logo {
     display: flex;
     align-items: center;
-    font-size: 16px !important; 
+    font-size: 16px !important; /* Mətn ölçüsü */
     font-weight: 900;
     text-decoration: none; 
     color: inherit;
 }
 
 .logo-img {
-    width: 20px !important;  
+    width: 20px !important;  /* Şəkil ölçüsü mütləq 20px */
     height: auto !important; 
     margin-right: 6px;
     max-width: 20px !important; 
 }
 
-/* Loqo Rəngləri (Mavi/Ağ) */
-.logo span:nth-child(2) { color: var(--text-light); } 
-.logo span:first-child { color: var(--accent-primary); } /* Peşəkar Mavi */
+/* Loqo Mətninin Rəngləri */
+.logo span:nth-child(2) { color: var(--text-light); } /* AI - Ağ/Gümüşü */
+.logo span:first-child { color: var(--accent-primary); } /* Zəfər - Peşəkar Mavi */
 
 
-/* SAĞ TƏRƏF NAVİQASİYASI */
+/* SAĞ TƏRƏF NAVİQASİYASI (Əlaqə, Hesabım, Dil) */
 nav.user-nav ul {
     list-style: none;
     display: flex; 
@@ -84,13 +90,13 @@ nav.user-nav ul li {
 }
 
 .nav-link:hover {
-    color: var(--accent-primary); /* Hover-də Mavi */
+    color: var(--accent-primary); 
 }
 
 .account-btn {
     text-decoration: none;
     color: var(--text-light);
-    background-color: var(--accent-primary); /* Mavi düymə */
+    background-color: var(--accent-primary); 
     padding: 6px 12px;
     border-radius: 4px;
     font-size: 14px;
@@ -98,13 +104,13 @@ nav.user-nav ul li {
 }
 
 .account-btn:hover {
-    background-color: #2563eb; /* Tünd Mavi */
+    background-color: #2563eb; 
 }
 
 .language-select {
     background-color: var(--bg-dark);
     color: var(--text-light);
-    border: 1px solid var(--accent-secondary); /* Gümüşü çərçivə */
+    border: 1px solid var(--accent-secondary); 
     padding: 4px 8px;
     border-radius: 4px;
     outline: none;
@@ -122,7 +128,8 @@ nav.user-nav ul li {
     align-items: center;
     padding: 20px 5%;
     text-align: center;
-    height: calc(100vh - 60px - 40px); /* Hündürlük tənzimlənməsi */
+    /* Scrollun yox olmasını təmin edən Hündürlük tənzimlənməsi */
+    height: calc(100vh - 60px - 40px); 
 }
 
 /* Qısa Məlumat Başlığı */
@@ -138,20 +145,31 @@ nav.user-nav ul li {
     padding: 15px 25px; 
     background-color: var(--bg-medium); 
     border-radius: 12px; 
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Daha dərin kölgə */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); 
 }
 
 /* Input stilləri */
+.input-area { display: flex; align-items: center; width: 100%; }
 #user-input { 
+    flex-grow: 1;
+    padding: 15px 15px; 
+    border: none;
     background-color: var(--bg-medium); 
     color: var(--text-light); 
     font-size: 17px; 
-    border: none;
+    outline: none;
 }
 #user-input::placeholder { color: var(--text-muted); }
 
 #submit-btn {
-    color: var(--accent-primary); /* Mavi göndərmə ikonu */
+    padding: 12px 18px;
+    border: none;
+    background-color: transparent;
+    color: var(--accent-primary); 
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 10px;
     transition: color 0.3s;
 }
 #submit-btn:hover {
@@ -160,10 +178,18 @@ nav.user-nav ul li {
 
 /* AI Cavab Qutusu */
 #ai-response { 
-    border-top: 1px solid var(--accent-secondary); /* Gümüşü ayırıcı */
-    /* Qalan stillər saxlanılır */
+    text-align: left;
+    min-height: 50px;
+    padding: 15px 0 5px 0;
+    color: var(--text-light);
+    background-color: var(--bg-medium);
+    border-top: 1px solid var(--accent-secondary); 
+    margin-top: 15px;
+    font-size: 15px;
+    font-style: normal;
 }
 
+/* FOOTER */
 footer {
     background-color: var(--bg-dark);
     color: var(--text-muted);
