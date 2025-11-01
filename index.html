@@ -1,18 +1,59 @@
-<header>
-    <a href="#" class="logo">
-        <img src="logonu.jpg" alt="ZəfərAI Loqo" class="logo-img"> 
-        <span>Zəfər</span><span style="font-weight: 400;">AI</span>
-    </a>
-    <nav class="user-nav">
-        <ul>
-            <li><a href="#" class="nav-link">Əlaqə</a></li>
-            <li><a href="#" class="nav-btn account-btn">Hesabım</a></li>
-            <li>
-                <select class="language-select">
-                    <option value="az">AZ</option>
-                    <option value="en">EN</option>
-                </select>
-            </li>
-        </ul>
-    </nav>
-</header>
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZəfərAI - Azərbaycan Tarixi Süni İntellekt</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">
+            <img src="logonu.jpg" alt="ZəfərAI Loqo" class="logo-img"> 
+            <span>Zəfər</span><span style="font-weight: 400;">AI</span>
+        </a>
+
+        <nav class="user-nav">
+            <ul>
+                <li><a href="#" class="nav-link">Əlaqə</a></li>
+                <li><a href="#" class="nav-btn account-btn">Hesabım</a></li>
+                <li>
+                    <select class="language-select">
+                        <option value="az">AZ</option>
+                        <option value="en">EN</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="ai-interface-section" class="full-screen-center">
+        
+        <div class="short-info">
+            <h2><span class="accent-color">ZəfərAI:</span> Azərbaycan Tarixi üçün Rəqəmsal Bələdçi</h2>
+            <p>
+                Başlamaq üçün tarixi sualınızı aşağıda daxil edin.
+            </p>
+        </div>
+
+        <div class="ai-interface">
+            <div class="input-area">
+                <input type="text" id="user-input" placeholder="Məsələn: 'Qarabağ xanlığının yaranması haqqında danış.'">
+                <button id="submit-btn">Göndər</button>
+            </div>
+            
+            <div id="ai-response">
+                </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 ZəfərAI. Bütün hüquqlar qorunur.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
