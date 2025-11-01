@@ -1,19 +1,18 @@
-/*========================================
-   ZəfərAI: Yekun ChatGPT Stilli Dizayn 
-   Daxil Edilib: Nazik Header, Bütün Menyu Elementləri
-==========================================*/
+
 
 :root {
-    --bg-dark: #202123;         
-    --bg-medium: #343541;       
-    --accent-gold: #FFC300;     
-    --text-light: #f5f5f5;      
-    --text-muted: #aaaaaa;      
-    --az-red: #E00034;          
+    /* Yeni Rənglər */
+    --bg-dark: #1A202C;         /* Tünd Fon (Qara-Mavi) */
+    --bg-medium: #2D3748;       /* Arayüz Fonu */
+    --accent-blue: #4299E1;     /* Vurğu Rəngi (Mavi - Etibarlılıq) */
+    --accent-red: #E53E3E;      /* Vurğu Rəngi (Qırmızı - Fərqlənmə) */
+    --text-light: #F7FAFC;      /* Ağ Mətn */
+    --text-muted: #A0AEC0;      /* Solğun Mətn */
+    
     --font-family: 'Montserrat', sans-serif;
 }
 
-/* Ümumi Sıfırlama */
+/* Ümumi və Bədən */
 * {
     margin: 0;
     padding: 0;
@@ -28,15 +27,15 @@ body {
     min-height: 100vh; 
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Scroll-un olmaması üçün */
+    overflow: hidden; 
 }
 
-/* NAVİQASİYA (Header) */
+/* NAVİQASİYA (Header) - Nazik və Mərkəzləşdirilmiş */
 header {
     background-color: var(--bg-dark);
     padding: 10px 5%; 
     display: flex;
-    justify-content: space-between; /* <<< SOL VƏ SAĞI AYIRAN ƏMR */
+    justify-content: space-between; 
     align-items: center;
     position: relative;
     z-index: 1000;
@@ -54,18 +53,21 @@ header {
 }
 
 .logo-img {
-    width: 20px !important;  
-    height: auto !important; 
+    width: 20px;  
+    height: auto; 
     margin-right: 6px;
+    max-width: 20px; 
 }
-.logo span:nth-child(2) { color: var(--text-light); }
-.logo span:first-child { color: var(--accent-gold); }
+
+/* Loqo Rəngləri (Mavi/Ağ) */
+.logo span:nth-child(2) { color: var(--text-light); } /* AI - Ağ */
+.logo span:first-child { color: var(--accent-blue); } /* Zəfər - Mavi */
 
 
-/* SAĞ TƏRƏF NAVİQASİYASI (Hesabım + Əlaqə + Dil) */
+/* SAĞ TƏRƏF NAVİQASİYASI */
 nav.user-nav ul {
     list-style: none;
-    display: flex; /* Elementləri yan-yana düzür */
+    display: flex; 
     align-items: center;
     padding: 0;
     margin: 0;
@@ -83,13 +85,13 @@ nav.user-nav ul li {
 }
 
 .nav-link:hover {
-    color: var(--text-light);
+    color: var(--accent-blue); /* Hover-də Mavi */
 }
 
 .account-btn {
     text-decoration: none;
     color: var(--text-light);
-    background-color: var(--bg-medium); 
+    background-color: var(--accent-red); /* Qırmızı düymə */
     padding: 6px 12px;
     border-radius: 4px;
     font-size: 14px;
@@ -97,7 +99,7 @@ nav.user-nav ul li {
 }
 
 .account-btn:hover {
-    background-color: #4a4b56; 
+    background-color: #C53030; /* Tünd Qırmızı */
 }
 
 .language-select {
@@ -121,24 +123,43 @@ nav.user-nav ul li {
     align-items: center;
     padding: 20px 5%;
     text-align: center;
-    /* Header (60px) və Footer-i (40px) çıxaraq scroll-u aradan qaldırır */
     height: calc(100vh - 60px - 40px); 
 }
 
-/* Qalan hissələr (short-info, ai-interface, footer) əvvəlki kimi qalır. */
-
+/* Qısa Məlumat Başlığı */
 .short-info { max-width: 700px; margin-bottom: 50px; }
 .short-info h2 { font-size: 40px; color: var(--text-light); font-weight: 700; margin-bottom: 5px; }
-.accent-color { color: var(--accent-gold); }
+.accent-color { color: var(--accent-blue); } /* Vurğu rəngi Mavi */
 .short-info p { font-size: 18px; color: var(--text-muted); }
 
-.ai-interface { max-width: 760px; width: 100%; padding: 15px 25px; background-color: var(--bg-medium); border-radius: 20px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); }
-.input-area { display: flex; align-items: center; width: 100%; }
-#user-input { flex-grow: 1; padding: 15px 15px; border: none; background-color: var(--bg-medium); color: var(--text-light); font-size: 17px; outline: none; }
-#user-input::placeholder { color: var(--text-muted); }
-#submit-btn { padding: 12px 18px; border: none; background-color: transparent; color: var(--accent-gold); cursor: pointer; font-size: 16px; font-weight: 700; border-radius: 10px; transition: color 0.3s; }
-#submit-btn:hover { color: var(--text-light); }
-#ai-response { text-align: left; min-height: 50px; padding: 15px 0 5px 0; color: var(--text-light); background-color: var(--bg-medium); border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 15px; font-size: 15px; font-style: normal; }
+/* DEMO/İNTERAKTİV BÖLMƏ (AI İNTERFEYSİ) */
+.ai-interface { 
+    max-width: 760px; 
+    width: 100%; 
+    padding: 15px 25px; 
+    background-color: var(--bg-medium); /* Açıq tünd fon */
+    border-radius: 10px; /* Daha yumru */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4); 
+}
+
+/* Input stilləri (Maviyə uyğun) */
+#user-input { 
+    background-color: var(--bg-medium); 
+    color: var(--text-light); 
+    font-size: 17px; 
+    border: none;
+    /* Qalan stillər saxlanılır */
+}
+
+#submit-btn {
+    color: var(--accent-blue); /* Mavi göndərmə ikonu */
+}
+
+/* AI Cavab Qutusu */
+#ai-response { 
+    border-top: 1px solid rgba(66, 153, 225, 0.3); /* Mavi separator */
+    /* Qalan stillər saxlanılır */
+}
 
 footer {
     background-color: var(--bg-dark);
