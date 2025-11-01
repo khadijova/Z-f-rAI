@@ -1,13 +1,11 @@
-
-
 :root {
-    /* Yeni Rənglər */
-    --bg-dark: #1A202C;         /* Tünd Fon (Qara-Mavi) */
-    --bg-medium: #2D3748;       /* Arayüz Fonu */
-    --accent-blue: #4299E1;     /* Vurğu Rəngi (Mavi - Etibarlılıq) */
-    --accent-red: #E53E3E;      /* Vurğu Rəngi (Qırmızı - Fərqlənmə) */
-    --text-light: #F7FAFC;      /* Ağ Mətn */
-    --text-muted: #A0AEC0;      /* Solğun Mətn */
+    /* Yeni Peşəkar Rəng Palitrası */
+    --bg-dark: #0f172a;         /* Əsas Fon (Deep Ocean) */
+    --bg-medium: #1e293b;       /* Arayüz Fonu */
+    --accent-primary: #3b82f6;  /* Əsas Vurğu (Peşəkar Mavi) */
+    --accent-secondary: #64748b;/* İkincil Vurğu (Gümüşü Mavi) */
+    --text-light: #f1f5f9;      /* Açıq Mətn (Ağ-Gümüşü) */
+    --text-muted: #94a3b8;      /* Solğun Mətn */
     
     --font-family: 'Montserrat', sans-serif;
 }
@@ -30,7 +28,7 @@ body {
     overflow: hidden; 
 }
 
-/* NAVİQASİYA (Header) - Nazik və Mərkəzləşdirilmiş */
+/* NAVİQASİYA (Header) */
 header {
     background-color: var(--bg-dark);
     padding: 10px 5%; 
@@ -40,9 +38,10 @@ header {
     position: relative;
     z-index: 1000;
     height: 60px; 
+    border-bottom: 1px solid var(--bg-medium); /* Ayırıcı xətt */
 }
 
-/* LOQO KİÇİLTMƏ (Məcburi) */
+/* LOQO KİÇİLTMƏ */
 .logo {
     display: flex;
     align-items: center;
@@ -53,15 +52,15 @@ header {
 }
 
 .logo-img {
-    width: 20px;  
-    height: auto; 
+    width: 20px !important;  
+    height: auto !important; 
     margin-right: 6px;
-    max-width: 20px; 
+    max-width: 20px !important; 
 }
 
 /* Loqo Rəngləri (Mavi/Ağ) */
-.logo span:nth-child(2) { color: var(--text-light); } /* AI - Ağ */
-.logo span:first-child { color: var(--accent-blue); } /* Zəfər - Mavi */
+.logo span:nth-child(2) { color: var(--text-light); } 
+.logo span:first-child { color: var(--accent-primary); } /* Peşəkar Mavi */
 
 
 /* SAĞ TƏRƏF NAVİQASİYASI */
@@ -85,13 +84,13 @@ nav.user-nav ul li {
 }
 
 .nav-link:hover {
-    color: var(--accent-blue); /* Hover-də Mavi */
+    color: var(--accent-primary); /* Hover-də Mavi */
 }
 
 .account-btn {
     text-decoration: none;
     color: var(--text-light);
-    background-color: var(--accent-red); /* Qırmızı düymə */
+    background-color: var(--accent-primary); /* Mavi düymə */
     padding: 6px 12px;
     border-radius: 4px;
     font-size: 14px;
@@ -99,13 +98,13 @@ nav.user-nav ul li {
 }
 
 .account-btn:hover {
-    background-color: #C53030; /* Tünd Qırmızı */
+    background-color: #2563eb; /* Tünd Mavi */
 }
 
 .language-select {
     background-color: var(--bg-dark);
     color: var(--text-light);
-    border: 1px solid var(--bg-medium);
+    border: 1px solid var(--accent-secondary); /* Gümüşü çərçivə */
     padding: 4px 8px;
     border-radius: 4px;
     outline: none;
@@ -123,13 +122,13 @@ nav.user-nav ul li {
     align-items: center;
     padding: 20px 5%;
     text-align: center;
-    height: calc(100vh - 60px - 40px); 
+    height: calc(100vh - 60px - 40px); /* Hündürlük tənzimlənməsi */
 }
 
 /* Qısa Məlumat Başlığı */
 .short-info { max-width: 700px; margin-bottom: 50px; }
 .short-info h2 { font-size: 40px; color: var(--text-light); font-weight: 700; margin-bottom: 5px; }
-.accent-color { color: var(--accent-blue); } /* Vurğu rəngi Mavi */
+.accent-color { color: var(--accent-primary); } /* Vurğu rəngi Mavi */
 .short-info p { font-size: 18px; color: var(--text-muted); }
 
 /* DEMO/İNTERAKTİV BÖLMƏ (AI İNTERFEYSİ) */
@@ -137,27 +136,31 @@ nav.user-nav ul li {
     max-width: 760px; 
     width: 100%; 
     padding: 15px 25px; 
-    background-color: var(--bg-medium); /* Açıq tünd fon */
-    border-radius: 10px; /* Daha yumru */
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4); 
+    background-color: var(--bg-medium); 
+    border-radius: 12px; 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Daha dərin kölgə */
 }
 
-/* Input stilləri (Maviyə uyğun) */
+/* Input stilləri */
 #user-input { 
     background-color: var(--bg-medium); 
     color: var(--text-light); 
     font-size: 17px; 
     border: none;
-    /* Qalan stillər saxlanılır */
 }
+#user-input::placeholder { color: var(--text-muted); }
 
 #submit-btn {
-    color: var(--accent-blue); /* Mavi göndərmə ikonu */
+    color: var(--accent-primary); /* Mavi göndərmə ikonu */
+    transition: color 0.3s;
+}
+#submit-btn:hover {
+    color: var(--text-light);
 }
 
 /* AI Cavab Qutusu */
 #ai-response { 
-    border-top: 1px solid rgba(66, 153, 225, 0.3); /* Mavi separator */
+    border-top: 1px solid var(--accent-secondary); /* Gümüşü ayırıcı */
     /* Qalan stillər saxlanılır */
 }
 
