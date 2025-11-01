@@ -58,10 +58,10 @@ header {
 }
 
 .logo-img {
-    width: 20px !important;  /* Şəkil ölçüsü mütləq 20px */
-    height: auto !important; 
+    width: 200px !important;  /* Şəkil ölçüsü mütləq 20px */
+    height: 100px !important; 
     margin-right: 6px;
-    max-width: 20px !important; 
+    max-width: 200px !important; 
 }
 
 /* Loqo Mətninin Rəngləri */
